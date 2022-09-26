@@ -46,20 +46,30 @@ public class XmlParser {
             XMLInputFactory factory = XMLInputFactory.newInstance();
             XMLEventReader eventReader =
                     factory.createXMLEventReader(new FileReader(fileName));
-
-            while(eventReader.hasNext() && !isFound) {
+            String personID = null;
+            while(eventReader.hasNext()) {
                 XMLEvent event = eventReader.nextEvent();
 
                 if (event.getEventType() == XMLStreamConstants.START_ELEMENT ) {
                     StartElement startElement = event.asStartElement();
                     String qName = startElement.getName().getLocalPart();
-
-                    if (qName.equalsIgnoreCase("person")) {
+                    String prefix = startElement.getName().getPrefix();
+                    if (!isFound && qName.equalsIgnoreCase("person")) {
                         Iterator<Attribute> attributes = startElement.getAttributes();
-                        String personId = attributes.next().getValue();
-                        System.out.println(createTriple(personId));
-                        writeTriple(createTriple(personId));
+                        personID = attributes.next().getValue();
                         isFound = true;
+                    }
+                    else if (prefix.contains("researcher-url") && qName.equalsIgnoreCase("url")) {
+                        if (eventReader.hasNext()) {
+                            event = eventReader.nextEvent();
+                            if (event.getEventType() == XMLStreamConstants.CHARACTERS) {
+                               Characters researcherURL = event.asCharacters();
+                               if (isFound) {
+                                   String triple = createTripleResearcherURL(personID, researcherURL.getData());
+                                   writeTriple(triple);
+                               }
+                            }
+                        }
                     }
                 }
             }
@@ -71,10 +81,18 @@ public class XmlParser {
             e.printStackTrace();
         }
     }
-    private static String createTriple(String personId) {
+    private static String createTripleResearcherURL(String personID, String researcherURL) {
+        String exampleRelatedProperty = "<http://example.org/related>";
+        String researcherUrlObject = "\"" + researcherURL + "\"";
+        String orcidURL = "<https://orcid.org" + personID.replace("/person","") + ">";
+        String triple = orcidURL + " " + exampleRelatedProperty + " " + researcherUrlObject + " .";
+        //System.out.println(triple);
+        return triple;
+    }
+    private static String createTripleAuthor(String personID) {
         String rdfType = "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>";
-        String dboAuthor = "<http:/dbpedia.org/ontology/Author>";
-        String orcidUrl = "<https://orcid.org" + personId.replace("/person","") + ">";
+        String dboAuthor = "<http:/dbpedia.org/ontology/Academic>";
+        String orcidUrl = "<https://orcid.org" + personID.replace("/person","") + ">";
         String triple = orcidUrl + " " + rdfType + " " + dboAuthor + " .";
         return triple;
     }

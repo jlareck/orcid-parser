@@ -16,20 +16,74 @@
         <history:verified-email>true</history:verified-email>
         <history:verified-primary-email>true</history:verified-primary-email>
     </history:history>
-    <person:person path="/0000-0003-7800-2222/person">
-        <person:name visibility="public" path="0000-0003-5000-0001">
-            <common:created-date>2020-04-28T22:56:27.155Z</common:created-date>
-            <common:last-modified-date>2020-04-28T22:56:27.155Z</common:last-modified-date>
-            <personal-details:given-names>Gabriela</personal-details:given-names>
+    <person:person path="/0000-0002-8130-8677/person">
+        <common:last-modified-date>2019-03-25T14:17:15.594Z</common:last-modified-date>
+        <person:name visibility="public" path="0000-0002-8130-8677">
+            <common:created-date>2017-06-19T10:57:35.277Z</common:created-date>
+            <common:last-modified-date>2017-06-19T10:57:35.506Z</common:last-modified-date>
+            <personal-details:given-names>Natanael</personal-details:given-names>
+            <personal-details:family-name>Arndt</personal-details:family-name>
         </person:name>
-        <other-name:other-names path="/0000-0003-5000-0001/other-names"/>
-        <researcher-url:researcher-urls path="/0000-0003-5000-0001/researcher-urls"/>
-        <email:emails path="/0000-0003-5000-0001/email"/>
-        <address:addresses path="/0000-0003-5000-0001/address"/>
-        <keyword:keywords path="/0000-0003-5000-0001/keywords"/>
-       <address:addresses path="/0000-0003-5000-0001/address"/>
-        <keyword:keywords path="/0000-0003-5000-0001/keywords"/>
-        <external-identifier:external-identifiers path="/0000-0003-5000-0001/external-identifiers"/>
+        <other-name:other-names path="/0000-0002-8130-8677/other-names"/>
+        <researcher-url:researcher-urls path="/0000-0002-8130-8677/researcher-urls">
+            <common:last-modified-date>2017-06-19T11:11:15.425Z</common:last-modified-date>
+            <researcher-url:researcher-url put-code="1157310" visibility="public" path="/0000-0002-8130-8677/researcher-urls/1157310" display-index="2">
+                <common:created-date>2017-06-19T11:11:15.423Z</common:created-date>
+                <common:last-modified-date>2017-06-19T11:11:15.423Z</common:last-modified-date>
+                <common:source>
+                    <common:source-orcid>
+                        <common:uri>https://orcid.org/0000-0002-8130-8677</common:uri>
+                        <common:path>0000-0002-8130-8677</common:path>
+                        <common:host>orcid.org</common:host>
+                    </common:source-orcid>
+                    <common:source-name>Natanael Arndt</common:source-name>
+                </common:source>
+                <researcher-url:url-name>Work Profile</researcher-url:url-name>
+                <researcher-url:url>http://aksw.org/NatanaelArndt</researcher-url:url>
+            </researcher-url:researcher-url>
+            <researcher-url:researcher-url put-code="1157311" visibility="public" path="/0000-0002-8130-8677/researcher-urls/1157311" display-index="1">
+                <common:created-date>2017-06-19T11:11:15.425Z</common:created-date>
+                <common:last-modified-date>2017-06-19T11:11:15.425Z</common:last-modified-date>
+                <common:source>
+                    <common:source-orcid>
+                        <common:uri>https://orcid.org/0000-0002-8130-8677</common:uri>
+                        <common:path>0000-0002-8130-8677</common:path>
+                        <common:host>orcid.org</common:host>
+                    </common:source-orcid>
+                    <common:source-name>Natanael Arndt</common:source-name>
+                </common:source>
+                <researcher-url:url-name>Private Homepage</researcher-url:url-name>
+                <researcher-url:url>http://natanael.arndt.xyz/</researcher-url:url>
+            </researcher-url:researcher-url>
+        </researcher-url:researcher-urls>
+        <email:emails path="/0000-0002-8130-8677/email"/>
+        <address:addresses path="/0000-0002-8130-8677/address"/>
+        <keyword:keywords path="/0000-0002-8130-8677/keywords"/>
+        <external-identifier:external-identifiers path="/0000-0002-8130-8677/external-identifiers">
+            <common:last-modified-date>2019-03-25T14:17:15.594Z</common:last-modified-date>
+            <external-identifier:external-identifier put-code="1350979" visibility="public" path="/0000-0002-8130-8677/external-identifiers/1350979" display-index="0">
+                <common:created-date>2019-03-25T14:17:15.593Z</common:created-date>
+                <common:last-modified-date>2019-03-25T14:17:15.594Z</common:last-modified-date>
+                <common:source>
+                    <common:source-client-id>
+                        <common:uri>https://orcid.org/client/0000-0002-5982-8983</common:uri>
+                        <common:path>0000-0002-5982-8983</common:path>
+                        <common:host>orcid.org</common:host>
+                    </common:source-client-id>
+                    <common:source-name>Scopus - Elsevier</common:source-name>
+                    <common:assertion-origin-orcid>
+                        <common:uri>https://orcid.org/0000-0002-8130-8677</common:uri>
+                        <common:path>0000-0002-8130-8677</common:path>
+                        <common:host>orcid.org</common:host>
+                    </common:assertion-origin-orcid>
+                    <common:assertion-origin-name>Natanael Arndt</common:assertion-origin-name>
+                </common:source>
+                <common:external-id-type>Scopus Author ID</common:external-id-type>
+                <common:external-id-value>42461015000</common:external-id-value>
+                <common:external-id-url>http://www.scopus.com/inward/authorDetails.url?authorID=42461015000&amp;partnerID=MN8TOARS</common:external-id-url>
+                <common:external-id-relationship>self</common:external-id-relationship>
+            </external-identifier:external-identifier>
+        </external-identifier:external-identifiers>
     </person:person>
     <activities:activities-summary path="/0000-0003-5000-0001/activities">
         <activities:distinctions path="/0000-0003-5000-0001/distinctions"/>
